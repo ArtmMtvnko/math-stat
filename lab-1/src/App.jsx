@@ -5,6 +5,8 @@ import './App.css'
 
 function App() {
   const [temperatures, setTemperatures] = useState([])
+  const minTemp = temperatures[0]
+  const maxTemp = temperatures[temperatures.length - 1]
 
   useEffect(() => {
     console.log(dataArray)
@@ -13,19 +15,15 @@ function App() {
 
   return (
     <>
-      <h1>Hello</h1>
+      <h1>Lab 1</h1>
       <h3>
-        Розмах вибірки: 
-        {temperatures.length === 0
-          ? '--'
-          : temperatures[temperatures.length - 1] - temperatures[0]
-        }
+        Розмах вибірки: {temperatures.length === 0 ? '--' : maxTemp - minTemp}
       </h3>
       <div className="tables-wrap">
         <table className="table">
           <thead>
             <tr>
-              <th>№</th>
+              <th>N_i</th>
               <th>Temperature</th>
             </tr>
           </thead>
@@ -39,7 +37,7 @@ function App() {
         <table className="table">
           <thead>
             <tr>
-              <th>№</th>
+              <th>N_i</th>
               <th>Temperature (sorted)</th>
             </tr>
           </thead>

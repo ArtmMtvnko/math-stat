@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { dataArray } from './services/data'
 import Temperature from './components/Temperature'
 import './App.css'
+import BarChart from './components/BarChart'
 
 function App() {
   const [temperatures, setTemperatures] = useState([])
@@ -11,6 +12,7 @@ function App() {
   useEffect(() => {
     console.log(dataArray)
     setTemperatures(dataArray.toSorted())
+    const reader = new FileReader()
   }, [])
 
   return (
@@ -47,6 +49,8 @@ function App() {
             )}
           </tbody>
         </table>
+
+        <BarChart />
       </div>
     </>
   )

@@ -3,6 +3,7 @@ import { dataArray } from './services/data'
 import Temperature from './components/Temperature'
 import './App.css'
 import BarChart from './components/BarChart'
+import FileLoader from './components/FileLoader'
 
 function App() {
   const [temperatures, setTemperatures] = useState([])
@@ -18,6 +19,7 @@ function App() {
   return (
     <>
       <h1>Lab 1</h1>
+      <FileLoader data={temperatures} setData={setTemperatures} />
       <h3>
         Розмах вибірки: {temperatures.length === 0 ? '--' : maxTemp - minTemp}
       </h3>

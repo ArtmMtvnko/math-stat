@@ -1,4 +1,3 @@
-import { data, dataArray, intervalTable } from '../services/data'
 import { Line } from 'react-chartjs-2'
 import { Chart as ChartJS } from 'chart.js/auto'
 

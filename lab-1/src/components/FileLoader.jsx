@@ -1,5 +1,4 @@
 import { useRef } from "react"
-import parseCSV from "../utils/parser"
 import Papa from 'papaparse'
 
 const FileLoader = ({ data, setData }) => {

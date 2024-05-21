@@ -16,7 +16,7 @@ const FileLoader = ({ data, setData }) => {
     
                 const selectedData = []
     
-                for (let i = 0; i < step * 100 + step; i += step) {
+                for (let i = 1; i < step * 100 + step; i += step) {
                     selectedData.push(results.data[i][2])
                 }
     

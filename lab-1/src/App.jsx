@@ -4,6 +4,7 @@ import TableRow from './components/TableRow'
 import './App.css'
 import BarChart from './components/BarChart'
 import FileLoader from './components/FileLoader'
+import LineChart from './components/LineChart'
 
 function App() {
   const [data, setData] = useState([])
@@ -27,7 +28,7 @@ function App() {
         <table className="table">
           <thead>
             <tr>
-              <th>N_i</th>
+              <th>№</th>
               <th>Capacity</th>
             </tr>
           </thead>
@@ -41,7 +42,7 @@ function App() {
         <table className="table">
           <thead>
             <tr>
-              <th>N_i</th>
+              <th>№</th>
               <th>Capacity (sorted)</th>
             </tr>
           </thead>
@@ -51,8 +52,11 @@ function App() {
             )}
           </tbody>
         </table>
-
-        <BarChart />
+        
+        <div style={{width: 800}}>
+          <LineChart data={data} />
+          <BarChart data={data} />
+        </div>
       </div>
     </>
   )

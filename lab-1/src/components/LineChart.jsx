@@ -1,18 +1,17 @@
 import { Line } from 'react-chartjs-2'
 import { Chart as ChartJS } from 'chart.js/auto'
 
-const LineChart = ({ data }) => {
-    const sortedData = data.toSorted((a, b) => a - b)
+const LineChart = ({ data, labels }) => {
     return (
         <Line 
             datasetIdKey='id'
             data={{
-                labels: [...sortedData],
+                labels: [...labels],
                 datasets: [
                     {
                         label: 'some label',
-                        data: [...sortedData],
-                        tension: 0.5
+                        data: [...data],
+                        tension: 0.2
                     }
                 ]
             }}

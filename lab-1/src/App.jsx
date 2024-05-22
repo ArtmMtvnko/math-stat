@@ -33,7 +33,9 @@ function App() {
             floor: floor,
             ceil: ceil,
             average: ((+floor + +ceil) / 2).toFixed(2),
-            count: 0
+            count: 0,
+            w: 0,
+            W: 0
         })
     }
     
@@ -44,6 +46,13 @@ function App() {
                 break
             }
         }
+    }
+
+    let accum = 0
+    for (const row of table) {
+      row.w = Number((row.count / data.length).toFixed(2))
+      accum += row.w
+      row.W = accum
     }
     console.log(table)
     return table
@@ -91,8 +100,26 @@ function App() {
         </table>
         
         <div style={{width: 800}}>
-          <LineChart labels={intervalTable.map(row => row.average)} data={intervalTable.map(row => row.count)}/>
-          <BarChart labels={intervalTable.map(row => row.average)} data={intervalTable.map(row => row.count)} />
+          <LineChart 
+            labels={intervalTable.map(row => row.average)}
+            data={intervalTable.map(row => row.count)}
+            name="capacity"
+          />
+          <BarChart 
+            labels={intervalTable.map(row => row.average)}
+            data={intervalTable.map(row => row.count)}
+            name="capacity"
+          />
+          <LineChart
+            labels={intervalTable.map(row => row.average)}
+            data={intervalTable.map(row => row.w)}
+            name="capacity"
+          />
+          <LineChart
+            labels={intervalTable.map(row => row.average)}
+            data={intervalTable.map(row => row.W)}
+            name="capacity"
+          />
         </div>
       </div>
     </>
